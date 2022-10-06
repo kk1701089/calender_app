@@ -1,0 +1,31 @@
+<h3>スケジュール一覧</h3>
+
+<table>
+	<thead>
+		<tr>
+			<th>id</th>
+			<th>タイトル</th>
+			<th>開始日</th>
+			<th>終了日</th>
+			<th>確認</th>
+			<th>編集</th>
+			<th>削除</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @users.each do |user| %>
+			<tr>
+				<td><%= user.id %></td>
+				<td><%= user.title %></td>
+				<td><%= user.start_day %></td>
+				<td><%= user.finish_day %></td>
+				<td><%= user.open %></td>
+				<td><%= user.apdate %></td>
+				<td><%= user.delet %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<p><%= link_to "スケジュール新規登録", :new_user %></p>
