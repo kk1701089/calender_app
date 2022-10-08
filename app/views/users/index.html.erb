@@ -1,6 +1,11 @@
 <h3>スケジュール一覧</h3>
 
+  <% if flash[:notice] %>
+    <p class="notice"><%= flash[:notice] %></p>
+  <% end %>
+
 <table>
+<%# １行目 %>
 	<thead>
 		<tr>
 			<th>id</th>
@@ -13,16 +18,18 @@
 		</tr>
 	</thead>
 
+<%# ２行目以降 %>
 	<tbody>
+    <%# users tableのレコードを全て格納する %>
 		<% @users.each do |user| %>
 			<tr>
 				<td><%= user.id %></td>
 				<td><%= user.title %></td>
-				<td><%= user.start_day %></td>
-				<td><%= user.finish_day %></td>
-				<td><%= user.open %></td>
-				<td><%= user.apdate %></td>
-				<td><%= user.delet %></td>
+				<td><%= user.start %></td>
+				<td><%= user.end %></td>
+				<td><%= link_to "確認", user %></td>
+				<td><%= link_to "編集", [:edit,user] %></td>
+        <td><%= link_to "削除", user, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
 			</tr>
 		<% end %>
 	</tbody>
