@@ -25,11 +25,11 @@
 			<tr>
 				<td><%= user.id %></td>
 				<td><%= user.title %></td>
-				<td><%= user.start %></td>
-				<td><%= user.end %></td>
+				<td><%= user.start.to_date %></td>
+				<td><%= user.end_day.to_date%></td>
 				<td><%= link_to "確認", user %></td>
 				<td><%= link_to "編集", [:edit,user] %></td>
-        <td><%= link_to "削除", user, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+        <td><%= link_to "削除", user, data: { turbo_method: :delete, turbo_confirm: '本当に削除してもよろしいですか？' } %></td>
 			</tr>
 		<% end %>
 	</tbody>

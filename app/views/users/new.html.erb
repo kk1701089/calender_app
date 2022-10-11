@@ -1,5 +1,11 @@
 <h3>ユーザー新規作成</h3>
 
+<% if flash[:notice] %>
+  <p class="notice"><%= flash[:notice] %></p>
+<% end %>
+
+<%= render "shared/error", obj: @user %>
+
 <%= form_with model: @user do |f| %>
 <table>
   <tr>
@@ -13,8 +19,8 @@
   </tr>
 
   <tr>
-    <th><%= f.label :end ,"終了日" %></th>
-    <td><%= f.date_field :end %></td>
+    <th><%= f.label :end_day ,"終了日" %></th>
+    <td><%= f.date_field :end_day %></td>
   </tr>
 
   <tr>

@@ -1,5 +1,12 @@
 <h3>スケジュール編集</h3>
 
+<% if flash[:notice] %>
+  <p class="notice"><%= flash[:notice] %></p>
+<% end %>
+
+<%= render "shared/error", obj: @user %>
+
+
 <%= form_with model: @user do |f| %>
 <table>
   <tr>
@@ -9,12 +16,12 @@
 
   <tr>
     <th><%= f.label :start ,"開始日" %></th>
-    <td><%= f.text_field :start %></td>
+    <td><%= f.date_field :start %></td>
   </tr>
 
   <tr>
-    <th><%= f.label :end ,"終了日" %></th>
-    <td><%= f.text_field :end %></td>
+    <th><%= f.label :end_day ,"終了日" %></th>
+    <td><%= f.date_field :end_day %></td>
   </tr>
 
   <tr>
