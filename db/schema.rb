@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_10_231118) do
-  create_table "users", force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2022_10_11_095629) do
+  create_table "posts", force: :cascade do |t|
     t.string "title"
     t.datetime "start", precision: nil
     t.datetime "end_day", precision: nil
@@ -20,6 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_10_231118) do
     t.string "delet"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "all_day"
   end
 
 end

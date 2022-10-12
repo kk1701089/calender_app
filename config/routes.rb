@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'homes/home'
 
   # crud処理で必要なルーティングを一括指定
-  resources :users
+  resources :posts
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

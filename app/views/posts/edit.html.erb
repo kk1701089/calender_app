@@ -4,10 +4,10 @@
   <p class="notice"><%= flash[:notice] %></p>
 <% end %>
 
-<%= render "shared/error", obj: @user %>
+<%= render "shared/error", obj: @post %>
 
 
-<%= form_with model: @user do |f| %>
+<%= form_with model: @post do |f| %>
 <table>
   <tr>
     <th><%= f.label :title ,"タイトル" %></th>
@@ -33,7 +33,7 @@
 <div>
   <ul>
     <li><%= f.submit "スケジュールの内容を更新する" %></li>
-    <li><%= link_to "スケジュール情報一覧に戻る", :users %></li>
+    <li><%= link_to "スケジュール情報一覧に戻る", :posts %></li>
   </ul>
 </div>
 <% end %>

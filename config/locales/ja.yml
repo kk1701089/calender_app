@@ -1,10 +1,11 @@
 ja:
   activerecord:
     attributes:
-      user:
+      post:
         title: "タイトル"
         start: "開始日"
         end_day: "終了日"
+        all_day: "終日"
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

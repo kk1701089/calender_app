@@ -3,24 +3,24 @@
 <table>
   <tr>
     <th>タイトル</th>
-    <td><%= @user.title %></td>
+    <td><%= @post.title %></td>
   </tr>
   <tr>
     <th>開始日</th>
-    <td><%= @user.start.to_date %></td>
+    <td><%= @post.start.to_date %></td>
   </tr>
   <tr>
     <th>終了日</th>
-    <td><%= @user.end_day.to_date %></td>
+    <td><%= @post.end_day.to_date %></td>
   </tr>
   <tr>
     <th>スケジュールメモ</th>
-    <td><%= @user.confirmation %></td>
+    <td><%= @post.confirmation %></td>
   </tr>
 </table>
 
 <div>
   <ul>
-    <li><%= link_to "スケジュール一覧に戻る", :users %></li>
+    <li><%= link_to "スケジュール一覧に戻る", :posts %></li>
   </ul>
 </div>
