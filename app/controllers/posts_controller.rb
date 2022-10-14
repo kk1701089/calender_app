@@ -8,6 +8,7 @@ def new
 end
 
 def create
+	private
 	@post = Post.new(params.require(:post).permit(:title, :start, :end_day, :all_day, :confirmation))
 	if @post.save
 		# 投稿が作成できた場合 
@@ -29,6 +30,7 @@ def edit
 end
 
 def update
+	private
 	@post = Post.find(params[:id])
 		if @post.update(params.require(:post).permit(:title, :start, :end_day, :confirmation))
 			flash[:notice] = "ユーザーIDが「#{@post.id}」のスケジュールを更新しました"

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # get 'users/index',to:'users#index'
-  get 'homes/home'
+  root "posts#index"
+  
 
   # crud処理で必要なルーティングを一括指定
   resources :posts
