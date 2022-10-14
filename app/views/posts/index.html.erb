@@ -1,0 +1,46 @@
+<h3>スケジュール一覧</h3>
+
+<% if flash[:notice] %>
+  <p class="notice"><%= flash[:notice] %></p>
+<% end %>
+
+<table>
+<%# １行目 %>
+	<thead>
+		<tr>
+			<th>id</th>
+			<th>タイトル</th>
+			<th>開始日</th>
+			<th>終了日</th>
+			<th>終日</th>
+			<th>確認</th>
+			<th>編集</th>
+			<th>削除</th>
+		</tr>
+	</thead>
+
+<%# ２行目以降 %>
+	<tbody>
+    <%# posts tableのレコードを全て格納する %>
+		<% @posts.each do |post| %>
+			<tr>
+				<td><%= post.id %></td>
+				<td><%= post.title %></td>
+				<td><%= post.start.to_date %></td>
+				<td><%= post.end_day.to_date%></td>
+				<td>
+					<% if post.all_day %>
+						<strong>○</strong>
+					<% end %>
+				</td>
+				<td><%= link_to "確認", post %></td>
+				<td><%= link_to "編集", [:edit,post] %></td>
+        <td><%= link_to "削除", post, data: { turbo_method: :delete, turbo_confirm: '本当に削除してもよろしいですか？' } %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<p><%= link_to "スケジュール新規登録", :new_post %></p>
+
+<h2>現在のスケジュールの数は<%= Post.count %>個です</h2>
